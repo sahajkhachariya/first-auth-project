@@ -90,6 +90,7 @@ public function changePassword(Request $request)
         'user_id' => 'required|integer',
         'old_password' => 'required',
         'new_password' => 'required|min:8', // Use 'min' for minimum length
+          
     ]);
 
     // Retrieve user from the database

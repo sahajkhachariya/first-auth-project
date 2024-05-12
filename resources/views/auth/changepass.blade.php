@@ -81,6 +81,8 @@
         <label for="new_password">New Password:</label>
         <input type="password" id="new_password" name="new_password" required>
 
+        
+        
         <input type="submit" value="Change Password">
     </form>
 
