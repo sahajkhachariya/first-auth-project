@@ -80,7 +80,12 @@
 
         <label for="new_password">New Password:</label>
         <input type="password" id="new_password" name="new_password" required>
-
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        @error('confirm_password')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
         
         
         <input type="submit" value="Change Password">

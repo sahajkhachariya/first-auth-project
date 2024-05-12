@@ -18,7 +18,7 @@ use App\Http\Controllers\AdminsideController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login',[CustomAuthController::class,'login']);
+Route::get('/login',[CustomAuthController::class,'login'])->name('login');
 Route::get('/register',[CustomAuthController::class,'register']);
 Route::post('/register-user',[CustomAuthController::class,'registeruser'])->name('register-user');
 Route::post('/login-user',[CustomAuthController::class,'loginuser'])->name('login-user');

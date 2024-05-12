@@ -11,8 +11,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col md-offset-4" style="margin">
-                <h2>this is your home page  <span style="color: blue;">{{ $data['name'] }}</span> (User ID: {{ $data['id'] }})</h1></h2>
+              
+                @if($data)
+                <h2>this is your home page  <span style="color: blue;">{{ $data['name'] }}</span> (User ID: {{ $data['id'] }})</h1></h2>  
                 <a href="{{ url('logout') }}">Logout</a>
+                
+                    
+                @else
+                    <!-- Display message for non-logged-in users -->
+        <h1>Welcome to HOME PAGE</h1>
+        <!-- Link to login page -->
+        <a href="{{ route('login') }}">Login</a>
+                @endif
             </div>
         </div>
     </div>

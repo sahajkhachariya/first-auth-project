@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Models\users;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 class CustomAuthController extends Controller
 {
     //
-    public function login(){
-        return view("auth.login");
+   public function login(){
+        if (Auth::check()) {
+            return redirect()->route('home'); // Redirect to home if already logged in
+        }
+        return view('auth.login');
     }
     
     public function register(){
@@ -41,37 +45,25 @@ class CustomAuthController extends Controller
     }
     public function loginuser(Request $request){
         $request->validate([
-           
-            'email'=>'required|email|',
-            'password'=>'required',
-
+            'email' => 'required|email',
+            'password' => 'required|min:8',
         ]);
-        $users = users:: where('email','=',$request->email)->first();
-        if($users){
-            if(Hash::check($request->password, $users->password)){
-               $request->session()->put('loginid',$users->id);
-               return redirect('home');
-            }
-            else{
-                return back()->with('fail','password does not match');
-            }
-
-        }else{
-            return back()->with('fail','this email is not registered');
+    
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('home')->with('success', 'Login successful');
+        } else {
+            return back()->with('fail', 'Incorrect email or password');
         }
     }
     public function home(){
-        $data = array ();
-        if(Session::has('loginid')){
-            $users = users::where('id','=',Session::get('loginid'))->first();
-        }
-        return view('home',['data' => $users]);
+        $data = Auth::user();
+        return view('auth.home', ['data' => $data]);
     }
     public function logout(){
-        if(Session::has('loginid')){
-            Session::pull('loginid');
-            return redirect('login');
-        }
+        Auth::logout(); // Logout the user
+        Session::forget('loginid'); // Clear login session data
+    
+        return redirect('/home')->with('success', 'You have been logged out successfully.');
     }
     
 
@@ -90,7 +82,7 @@ public function changePassword(Request $request)
         'user_id' => 'required|integer',
         'old_password' => 'required',
         'new_password' => 'required|min:8', // Use 'min' for minimum length
-          
+           'confirm_password' => 'required|same:new_password',
     ]);
 
     // Retrieve user from the database
