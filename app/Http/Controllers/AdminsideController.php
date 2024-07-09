@@ -29,7 +29,7 @@ class AdminsideController extends Controller
          $res = $data->save();
          if($res){
              return redirect('data');
-         }else{
+         }else{  
              return back()->with('fail','Something Went Wrong');
          }
          

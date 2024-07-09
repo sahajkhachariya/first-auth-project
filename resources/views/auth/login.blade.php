@@ -8,37 +8,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
    
-.form-container {
+   body{
+            background-image: url('https://img.freepik.com/free-photo/design-space-paper-textured-background_53876-42776.jpg?t=st=1720330088~exp=1720333688~hmac=5471c51494fb25a1d03bc0bfcb3c5b3a5a66911dc112266c75799a8161d1b539&w=996') ;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+.container {
+  backdrop-filter: blur(2000px);
+  background-color: ;
   max-width: 400px;
-  margin: 0 auto;
+  margin-top: 5%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+h2{
+  text-align: center;
 }
 
 .btn-primary {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   font-size: 16px;
+  font-family: 'Lato', sans-serif;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  display: inline-block;
+ box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+ outline: none;
 }
 
 .btn-primary:hover {
@@ -60,12 +66,12 @@
   text-decoration: underline;
 }
 
-</style>
+</style> 
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col md-offset-4" style="margin">
+            <div class="col-md-12 col md-offset-12" >
                 <h2>Login</h2>
         <form action="{{route('login-user')}}"  method="post" class="align center">
             @if(Session::has('success'))
@@ -90,13 +96,13 @@
             </div>
             <br><br>
             
-            <a href="{{ url('/change-password-form') }}">Change Password</a>
-            <div class="form-group">
+            <a href="{{ url('/change-password-form') }}">Change Password</a><br><br>
+            <div class="form-group text-center">
                 <button type="submit"class = "btn btn-primary"  name = "login" >login</button>
             </div>
-            <span class=register>Not registered?<a href="register">Register</a></span>
+            <span class=register>Not registered?<a href="register"> Register</a></span>
         </form>
-            </div>
+            </div>     
         </div>
     </div>
 </body>

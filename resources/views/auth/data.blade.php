@@ -49,7 +49,9 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Gender</th>
-        <th scope="col">Department</th>
+        <th scope="col">Branch</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -60,7 +62,7 @@
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->gender}}</td>
-        <td>{{$data->department}}</td>
+        <td>{{$data->branch}}</td>
         <td><a href="change/{{$data->id}}"><button>Update</button></a></td>
         <td><a href="delete/{{$data->id}}"><button>Delete</button></a></td>
       </tr>

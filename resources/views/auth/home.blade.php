@@ -6,22 +6,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Custom Authentication</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+.nav-link {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+.h2, .h1 {
+    text-align: center;
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff !important;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.nav-link-data {
+  color: #000 !important;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.nav-link-logout {
+  color: #007bff !important;
+}
+
+.nav-link-logout:hover {
+  color: #0056b3 !important;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust this value as needed */
+}
+</style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MyApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    @if($data)
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-data" href="{{ route('data') }}">Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-logout" href="{{ url('logout') }}">Logout</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-logout" href="{{ route('login') }}">Login</a>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col md-offset-4" style="margin">
-              
+            <div class="col-md-12 text-center">
                 @if($data)
-                <h2>this is your home page  <span style="color: blue;">{{ $data['name'] }}</span> (User ID: {{ $data['id'] }})</h1></h2>  
-                <a href="{{ url('logout') }}">Logout</a>
-                
-                    
+                    <h2>This is your home page <span style="color: blue;">{{ $data['name'] }}</span> (User ID: {{ $data['id'] }})</h2>
                 @else
                     <!-- Display message for non-logged-in users -->
-        <h1>Welcome to HOME PAGE</h1>
-        <!-- Link to login page -->
-        <a href="{{ route('login') }}">Login</a>
+                    <h1>Welcome to HOME PAGE</h1>
                 @endif
             </div>
         </div>
