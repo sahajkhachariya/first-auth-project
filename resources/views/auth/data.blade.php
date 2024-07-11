@@ -3,6 +3,15 @@
 <head>
   <style>
     /* Define table styles */
+    
+   
+   body{
+            background-image: url('https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg') ;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 5000px;
+            
+        }
 .table {
   width: 100%;
   border-collapse: collapse;

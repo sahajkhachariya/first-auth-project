@@ -16,7 +16,7 @@
 }
 
 .nav-link:hover {
-  background-color: #e9ecef;
+  background-color:palevioletred;
   border-radius: 5px;
 }
 
@@ -48,13 +48,13 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     height: 80vh; /* Adjust this value as needed */
 }
 </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">MyApp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,3 +94,4 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
+f

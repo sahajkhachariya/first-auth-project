@@ -9,10 +9,10 @@
 <style>
    
    body{
-            background-image: url('https://img.freepik.com/free-photo/design-space-paper-textured-background_53876-42776.jpg?t=st=1720330088~exp=1720333688~hmac=5471c51494fb25a1d03bc0bfcb3c5b3a5a66911dc112266c75799a8161d1b539&w=996') ;
+            background-image: url('https://t4.ftcdn.net/jpg/00/93/85/69/360_F_93856984_YszdhleLIiJzQG9L9pSGDCIvNu5GEWCc.jpg') ;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 5000px;
             
         }
 .container {
