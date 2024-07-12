@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 @if($data)
-                    <h2>This is your home page <span style="color: blue;">{{ $data['name'] }}</span> (User ID: {{ $data['id'] }})</h2>
+                    <h2>Welcome to your home page <span style="color: blue;">{{ $data['name'] }}</span> (User ID: {{ $data['id'] }})</h2>
                 @else
                     <!-- Display message for non-logged-in users -->
                     <h1>Welcome to HOME PAGE</h1>

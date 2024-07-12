@@ -57,7 +57,7 @@ input[type="submit"]:hover {
 }
     </style>
 
-    <form action="{{url('update_data',$data->id)}}" method="post">
+    <form action="{{url('change_data',$data->id)}}" method="post">
         @if (Session::has('success'))
             <div class="text-ok">{{Session::get('success')}}</div>
         @endif
@@ -78,9 +78,9 @@ input[type="submit"]:hover {
         <input type="text" id="gender" name="gender" value="{{$data->gender}}">
         <span class="text-danger">@error('gender'){{$message}} @enderror</span>
 
-        <label for="department">Department:</label>
-        <input type="text" id="department" name="department" value="{{$data->department}}">
-        <span class="text-danger">@error('department'){{$message}} @enderror</span>
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" value="{{$data->branch}}">
+        <span class="text-danger">@error('branch'){{$message}} @enderror</span>
 
         <input type="submit" value="Register">
     </form>

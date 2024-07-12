@@ -32,4 +32,4 @@ Route::post('/changepass', [CustomAuthController::class, 'changePassword']);
 Route::get('/data', [AdminsideController::class,'data'])->name('data');
 Route::get('delete/{id}', [AdminsideController::class,'delete'])->name('delete');
 Route::get('change/{id}', [AdminsideController::class,'change'])->name('change');
-Route::post('change_data/{id}', [AdminsideController::class,'change_data'])->name('update_data');
+Route::post('change_data/{id}', [AdminsideController::class,'change_data'])->name('change_data');
